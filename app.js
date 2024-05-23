@@ -163,8 +163,7 @@ App({
           "logo": "https://img3.fegine.com/express/zto.jpg"
         }
       }
-    },
-    a:1
+    }
   },
 
   onLaunch() {

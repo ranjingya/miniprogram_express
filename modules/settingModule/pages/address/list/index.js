@@ -10,7 +10,8 @@ Page({
 
   // 页面的初始数据
   data: {
-    addressList: []
+    addressList: [],
+    sendFlag:''
   },
 
   // 删除收货地址
@@ -45,16 +46,39 @@ Page({
   // 获取收货地址列表数据
   async getAddressList() {
     const { data: addressList } = await reqAddressList()
-    console.log("addressList:", addressList)
-    console.log("addressList:", typeof(addressList))
-    console.log("addressList:", length(addressList))
-    this.setData({ addressList })
+    console.log("addreddList:", addressList)
+    this.setData({ addressList: addressList.address_list })
   },
 
   // 更新收货地址
   changeAddress(event) {
-    // 需要判断是否是从结算支付页面进入的收货地址列表页面
-    // 如果是，才能够获取点击的收货地址，否则，不执行后续的逻辑，不执行切换收货地址的逻辑
+
+    console.log(this.data.sendFlag);
+    let selectSendAddress = null;
+
+    if(this.data.sendFlag.includes('send') || this.data.sendFlag.includes('receive')){
+      const addressId = event.currentTarget.dataset.id
+      selectSendAddress = this.data.addressList.find((item) => item.id === addressId)
+    }
+
+    if (selectSendAddress) {
+      const pages = getCurrentPages();
+      const prevPage = pages[pages.length - 2];  // 获取上一级页面的实例对象
+      if (this.data.sendFlag.includes('send')) {
+        prevPage.setData({
+          send_address_info: selectSendAddress  // 设置发送地址
+        });
+      } else if (this.data.sendFlag.includes('receive')) {
+        prevPage.setData({
+          receive_address_info: selectSendAddress  // 设置接收地址
+        });
+      }
+      wx.navigateBack()
+    }
+
+
+
+
     if (this.flag !== '1') return
 
     // 如果是从结算支付页面进入的收货地址列表页面，需要获取点击的收货地址详细信息
@@ -83,5 +107,9 @@ Page({
   onLoad(options) {
     // 接收传递的参数，挂载到页面的实例上，方便在其他方法中使用
     this.flag = options.flag
+    this.setData({
+      sendFlag: options.sendFlag
+    })
+    
   }
 })

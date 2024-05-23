@@ -182,7 +182,9 @@ Page({
     this.data.queryResult = []
     is_end = false
     this.setData({
-      expressNumber: ''
+      expressNumber: '',
+      selectedCompanyIndex:null,
+      selectedexpressType:null
     })
     this.showExpress()
     wx.stopPullDownRefresh()

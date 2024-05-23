@@ -73,7 +73,7 @@ Component({
     //复制快递单号
     copyExpressNumber: function () {
       wx.setClipboardData({
-        data: this.data.queryResult.result.number,
+        data: this.data.expressNo,
         success: function () {
           wx.showToast({
             title: '单号复制成功'

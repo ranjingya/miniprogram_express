@@ -33,6 +33,10 @@ Page({
       fullAddress: provinceName + cityName + districtName + address,
       isDefault: isDefault ? 1 : 0
     }
+    console.log("params", params)
+    
+    console.log("params_is:", typeof(params.idDefault))
+
 
     // 对组织以后的参数进行验证，验证通过以后，需要调用新增的接口实现新增收货地址功能
     const { valid } = await this.validatorAddress(params)

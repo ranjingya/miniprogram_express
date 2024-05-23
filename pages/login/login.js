@@ -55,9 +55,6 @@ ComponentWithStore({
             // 将自定义登录态 token 存储到 Store 对象
             this.setToken(data.Authorization)
 
-            // 获取用户信息
-            this.getUserInfo()
-
             // 返回上一级页面
             wx.navigateBack()
           } else {
@@ -66,17 +63,5 @@ ComponentWithStore({
         }
       })
     }, 500),
-
-    // 获取用户信息
-    async getUserInfo() {
-      // 调用接口，获取用户信息
-      const { data } = await reqUserInfo()
-
-      // 将用户信息存储到本地
-      setStorage('userInfo', data)
-
-      // 将用户信息存储到 Store 对象
-      this.setUserInfo(data)
-    }
   }
 })

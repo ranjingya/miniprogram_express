@@ -7,8 +7,8 @@ import { toast, modal } from './extendApi'
 
 // 对类进行实例化
 const instance = new WxRequest({
-  baseURL: 'http://192.168.224.5:5000',
-  // baseURL:'http://192.168.123.109:5000',
+  // baseURL: 'http://192.168.224.5:5000',
+  baseURL:'http://192.168.123.109:5000',
   timeout: 5000
 })
 

@@ -11,36 +11,15 @@
     "miniprogram": {
       "list": [
         {
-          "name": "pages/classify/classify",
-          "pathName": "pages/classify/classify",
+          "name": "pages/expDelivery/expDelivery",
+          "pathName": "pages/expDelivery/expDelivery",
           "query": "",
           "launchMode": "default",
           "scene": null
         },
         {
-          "name": "pages/index/index",
-          "pathName": "pages/index/index",
-          "query": "",
-          "launchMode": "default",
-          "scene": null
-        },
-        {
-          "name": "pages/queryHistory/queryHistory",
-          "pathName": "pages/queryHistory/queryHistory",
-          "query": "",
-          "launchMode": "default",
-          "scene": null
-        },
-        {
-          "name": "user",
-          "pathName": "pages/user/user",
-          "query": "",
-          "launchMode": "default",
-          "scene": null
-        },
-        {
-          "name": "pages/cart/cart",
-          "pathName": "pages/cart/cart",
+          "name": "modules/settingModule/pages/address/add/index",
+          "pathName": "modules/settingModule/pages/address/list/index",
           "query": "",
           "launchMode": "default",
           "scene": null

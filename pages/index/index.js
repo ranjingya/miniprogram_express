@@ -92,7 +92,19 @@ Page({
           console.log('失败', res)
         }
       })
-    } else if(index== 2){
+    }  
+    else if(index == 1){
+      wx.navigateTo({
+        url: '/pages/expDelivery/expDelivery',
+        success: function(res){
+          console.log('跳转address成功', res)
+        },
+        fail: function(res){
+          console.log('失败', res)
+        }
+      })
+    }
+    else if(index== 2){
       wx.navigateTo({
         url: '/modules/settingModule/pages/address/list/index',
         success: function(res){

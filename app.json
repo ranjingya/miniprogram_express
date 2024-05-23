@@ -10,13 +10,15 @@
     "pages/express/express",
     "pages/send/send",
     "pages/queryHisroryInfo/expressHistoryInfo",
-    "pages/classify/classify"
+    "pages/classify/classify",
+    "pages/expDelivery/expDelivery"
   ],
   "resolveAlias": {
     "@/*": "/*"
   },
   "requiredPrivateInfos": [
-    "getLocation"
+    "getLocation",
+    "chooseLocation"
   ],
   "window": {
     "navigationBarTextStyle": "black",

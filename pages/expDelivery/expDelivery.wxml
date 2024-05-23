@@ -1,0 +1,58 @@
+<view class="container-order">
+  <view class="information">
+    <scroll-view class="information-card">
+      <view class="user-info">
+        <!-- 图标 -->
+        <view class="user-info-left">寄</view>
+        <!-- 中间 -->
+        <view class="user-info-middle">
+          <view>
+            <!-- 中间姓名 -->
+            <text class="user-info-name">{{ send_address_info.name }}</text>
+            <!-- 中间号码 -->
+            <text class="user-info-phone">{{ send_address_info.phone }}</text>
+          </view>
+          <view class="user-info-address">{{ send_address_info.address }}</view>
+        </view>
+        <!-- 按钮 -->
+        <navigator class="address-button" url="/modules/settingModule/pages/address/list/index?sendFlag='send'">
+          地址簿
+        </navigator>
+      </view>
+
+      <view class="user-info">
+        <!-- 图标 -->
+        <view class="user-info-left receive-icon">收</view>
+        <!-- 中间 -->
+        <view class="user-info-middle">
+          <view>
+            <!-- 中间姓名 -->
+            <text class="user-info-name">{{ receive_address_info.name }}</text>
+            <!-- 中间号码 -->
+            <text class="user-info-phone">{{
+              receive_address_info.phone
+            }}</text>
+          </view>
+          <view class="user-info-address">{{
+            receive_address_info.address
+          }}</view>
+        </view>
+        <!-- 按钮 -->
+        <navigator class="address-button" url="/modules/settingModule/pages/address/list/index?sendFlag='receive'">
+          地址簿
+        </navigator>
+      </view>
+    </scroll-view>
+  </view>
+  <view class="container-list">
+    <block wx:for="{{ useList }}" wx:key="index">
+      <view class="use-item" bindtap="handleItemClick">
+        <text class="use-text">{{ item.name }}</text>
+      </view>
+    </block>
+  </view>
+  <view class="detail-flex">
+    <view class="left"> ¥999{{ orderInfo.totalAmount }} </view>
+    <view class="right" bindtap="submitOrder">下单</view>
+  </view>
+</view>

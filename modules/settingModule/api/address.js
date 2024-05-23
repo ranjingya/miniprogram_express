@@ -6,7 +6,7 @@ import http from '@/utils/http'
  * @returns Promise
  */
 export const reqAddAddress = (data) => {
-  return http.post('/userAddress/save', data)
+  return http.post('/address/add', data)
 }
 
 /**
@@ -23,7 +23,7 @@ export const reqAddressList = () => {
  * @returns Promise
  */
 export const reqAddressInfo = (id) => {
-  return http.get(`/userAddress/${id}`)
+  return http.get(`/address/get-by-id/${id}`)
 }
 
 /**
@@ -32,7 +32,7 @@ export const reqAddressInfo = (id) => {
  * @returns Promise
  */
 export const reqUpdateAddress = (data) => {
-  return http.post('/userAddress/update', data)
+  return http.post('/address/update', data)
 }
 
 /**
@@ -41,5 +41,5 @@ export const reqUpdateAddress = (data) => {
  * @returns Promise
  */
 export const reqDelAddress = (id) => {
-  return http.get(`/userAddress/delete/${id}`)
+  return http.get(`/address/delete/${id}`)
 }
