@@ -1,0 +1,60 @@
+<view class="container">
+  <view class="setting-list avatar-container">
+    <text>头像</text>
+
+    <view class="avatar">
+      <button
+        class="avatar-btn"
+        hover-class="none"
+        open-type="chooseAvatar"
+        bindchooseavatar="chooseAvatar"
+      >
+        <image src="{{ userInfo.headimgurl || '/assets/images/avatar.png' }}" />
+      </button>
+    </view>
+  </view>
+
+  <view class="setting-list nickname">
+    <text>昵称</text>
+    <text bindtap="onUpdateNickName">{{ userInfo.nickname || '尚硅谷' }}</text>
+  </view>
+
+  <view class="footer">
+    <view class="btn" bindtap="updateUserInfo">保存</view>
+  </view>
+
+  <van-dialog
+    custom-style="position: relative"
+    use-slot
+    title="修改昵称"
+    show="{{ isShowPopup }}"
+    showConfirmButton="{{ false }}"
+    showCancelButton="{{ false }}"
+    transition="fade"
+  >
+    <!-- 需要使用 form 组件包裹住 input 输入框以及 按钮组件 -->
+    <form bindsubmit="getNickName">
+      <!-- 需要给 input 输入框添加 type 属性，属性值需要设置为 nickname -->
+      <!-- 只有将 input 输入框 type 属性属性值需要设置为 nickname，键盘上方才会显示微信昵称 -->
+
+      <!-- 需要给 input 输入框添加 name 属性 -->
+      <!-- form 组件会自动收集带有 name 属性的表单元素的值 -->
+      <input
+        type="nickname"
+        name="nickname"
+        class="input-name"
+        value="{{ userInfo.nickname }}"
+      />
+      <view class="dialog-content">
+        <!-- 给按钮添加 form-type 属性，如果属性值是 reset，就是重置表单 -->
+        <button class="cancel" bindtap="cancelForm" form-type="reset">
+          取消
+        </button>
+
+        <!-- 给按钮添加 form-type 属性，如果属性值是 submit，就会将按钮变为提交按钮 -->
+        <!-- 在点击确定按钮时，就会触发 form 组件的提交事件 -->
+        <button class="confirm" type="primary" form-type="submit">确定</button>
+      </view>
+    </form>
+  </van-dialog>
+</view>

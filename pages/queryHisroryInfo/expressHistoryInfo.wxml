@@ -1,0 +1,4 @@
+<!--pages/queryHisroryInfo/expressHistoryInfo.wxml-->
+<scroll-view scroll-y="true" show-scrollbar="{{false}}" enhanced="{{true}}" class="list-box" enable-flex="true">
+  <query-express-info class="query-express-info"></query-express-info>
+</scroll-view>

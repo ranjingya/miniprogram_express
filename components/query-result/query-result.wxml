@@ -1,0 +1,49 @@
+<!-- components/query-result/query-result.wxml -->
+<view class="query-result-wrap" bindtap="changeTest">
+    <view wx:if="{{ queryResult === null }}" class="no-data">
+        <image src="/icons/index/empty.png" mode="widthFix"></image>
+        <text>暂无查询信息</text>
+    </view>
+    <view wx:else>
+        <view class="query-result">
+            <view class="express-card" >
+                <view class="express-card-head">
+                    {{ queryResult.result.expName }}：{{ queryResult.result.number }}
+                    <image src="/icons/index/copy.png" bindtap="copyExpressNumber"></image>
+                </view>
+                <view class="express-card-body">
+                    <view class="express-card-body-left">
+                        <image src="{{ queryResult.result.logo }}" mode="widthFix"></image>
+                    </view>
+                    <view class="express-card-body-right">
+                        <view style="font-size: 36rpx; font-weight: bold; color: #fe7a15">
+                            {{expressStatus}}
+                        </view>
+                        <view style="font-size: 24rpx">
+                            最近更新：{{queryResult.result.updateTime}}
+                        </view>
+                        <view style="font-size: 24rpx">
+                            已在途：{{queryResult.result.takeTime}}
+                        </view>
+                    </view>
+                </view>
+            </view>
+            <view class="logistics-box">
+                <view class="logistics-item" wx:for="{{queryResult.result.list}}" wx:key="index">
+                    <view class="logistics-item-left">
+                        <view class="line-box">
+                            <view class="top-line "></view>
+                            <view class="bottom-line "></view>
+                        </view>
+                        <view class="center-circle"></view>
+                    </view>
+                    <view class="logistics-item-right ">
+                        <view class="logistics-item-text">{{item.status}}</view>
+                        <view class="logistics-item-time">{{item.time}}</view>
+                    </view>
+                </view>
+            </view>
+        </view>
+        <view class="no-more">我是有底线的呦~</view>
+    </view>
+</view>

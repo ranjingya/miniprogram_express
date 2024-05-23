@@ -1,0 +1,7 @@
+{
+  "usingComponents": {
+    "query-result": "/components/query-result/query-result"
+  },
+  "navigationStyle": "custom"
+}
+  

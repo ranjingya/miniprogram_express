@@ -1,0 +1,171 @@
+/* 没有数据 */
+.no-data {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  padding: 20rpx 0;
+  min-height: 320rpx;
+}
+
+.no-data image {
+  margin: 20rpx auto;
+  width: 320rpx;
+}
+
+.no-data text {
+  margin-top: 24rpx;
+  font-size: 48rpx;
+  color: #909399;
+}
+
+/* 快递简介卡片 */
+.express-card {
+  display: flex;
+  flex-direction: column;
+  margin: 24rpx 36rpx 12rpx 36rpx;
+  padding: 20rpx;
+  border-radius: 24rpx;
+  /* background-color: #fe7a1537; */
+  background: linear-gradient(135deg, #f8d90f4b, #fe7a1537, rgba(222, 222, 222, 0.041));
+  backdrop-filter: blur(10px);
+  box-shadow: 5px 5px 20px 0 rgba(0, 0, 0, 0.15);
+}
+
+.express-card-head {
+  display: flex;
+  font-size: 24rpx;
+  line-height: 24rpx;
+  align-items: center;
+}
+
+.express-card-head image {
+  margin-left: 12rpx;
+  width: 36rpx;
+  height: 36rpx;
+}
+
+.express-card-body {
+  display: flex;
+  flex-direction: row;
+  justify-content: left;
+  margin-top: 12rpx;
+  min-height: 128rpx;
+}
+
+
+.express-card-body-left{
+  display: flex;
+  align-items: center;
+}
+
+.express-card-body-left image {
+  height: auto;
+  width: 160rpx;
+  border-radius: 24rpx;
+  
+}
+
+.express-card-body-right {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin-left: 24rpx;
+}
+
+/* 物流详情 */
+.logistics-box {
+  margin: 0 36rpx;
+  padding-top: 12rpx;
+}
+
+.logistics-item {
+  width: 100%;
+  display: flex;
+}
+
+.logistics-item-left {
+  position: relative;
+  width: 60rpx;
+}
+
+.line-box {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  padding-left: 29rpx;
+}
+
+.top-line {
+  width: 3rpx;
+  height: 40rpx;
+  background-color: gainsboro;
+}
+
+.bottom-line {
+  flex: 1;
+  width: 1px;
+  background-color: gainsboro;
+}
+
+.center-circle {
+  position: absolute;
+  top: 40rpx;
+  left: 21rpx;
+  width: 18rpx;
+  height: 18rpx;
+  border-radius: 50%;
+  background-color: #ccc;
+}
+
+.logistics-item-right {
+  flex: 1;
+  padding: 16rpx 32rpx 32rpx 18rpx;
+  box-sizing: border-box;
+}
+
+.border-bottom {
+  border-bottom: 1px solid #f2f2f2;
+}
+
+.logistics-item-text {
+  font-size: 30rpx;
+  margin-bottom: 10rpx;
+}
+
+.logistics-item-time {
+  font-size: 24rpx;
+  color: gray;
+}
+
+.logistics-item:nth-child(1) .center-circle {
+  left: 10rpx;
+  border: 10rpx solid #ffc31ecf;
+  background-color: #fe7a15;
+}
+
+.logistics-item:nth-child(1) .top-line {
+
+  background-color: white;
+}
+
+.logistics-item:nth-last-child(1) .bottom-line {
+
+  background-color: white;
+}
+
+.logistics-item:nth-child(1) .logistics-item-text {
+
+  color: #fe7a15;
+}
+
+
+
+
+
+.no-more {
+  text-align: center;
+  padding: 20rpx 0;
+  font-size: 26rpx;
+  color: #909399;
+}

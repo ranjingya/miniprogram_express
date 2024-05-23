@@ -1,0 +1,41 @@
+<view class="page-container">
+  <scroll-view class="main">
+    <swiper class="swiper-wrap" indicator-dots="true" autoplay="true" interval="2000" duration="400" indicator-color="gray" indicator-active-color="white">
+      <block wx:for="{{imgList}}" wx:for-index="index" wx:for-item="item" wx:key="index">
+        <swiper-item>
+          <image src="{{item}}" mode="widthFix"></image>
+        </swiper-item>
+      </block>
+    </swiper>
+  </scroll-view>
+
+  <view class="shop-container">
+    <scroll-view class="shop-left-view" scroll-y>
+      <block wx:for="{{ categoryList }}" wx:key="id">
+        <view class="left-view-item {{ activeIndex === index ? 'active' : '' }}" bindtap="updateActive" data-index="{{ index }}">
+          {{ item.name }}
+        </view>
+      </block>
+    </scroll-view>
+
+    <scroll-view class="shop-right-view" scroll-y>
+      <!-- 二级分类 -->
+      <view>
+        <view wx:for="{{ shoppingList }}" wx:key="index" class="right-view-item">
+          <image class="shopping-image" src="{{ item.pic_url }}" mode="widthFix"></image>
+          <view class="shoppint-item-right">
+            <text class="shopping-text">{{ item.name }}</text>
+            <text class="price-text">￥{{ item.price }}</text>
+            <view class="button-container">
+              <button class="add-to-cart-button first-button" data-id="{{item.id}}" bindtap="addToCart">添加购物车</button>
+              <button class="buy-now-button" bindtap="buyNow">立即购买</button>
+            </view>
+          </view>
+        </view>
+      </view>
+      <navigator url="/pages/cart/cart">
+        <van-icon class="floating-button" name="shopping-cart" color="ffffff" size="60rpx"/>
+      </navigator>
+    </scroll-view>
+  </view>
+</view>

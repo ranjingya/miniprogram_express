@@ -1,0 +1,153 @@
+.page-container {
+  background-color: #ececec;
+  /* 灰色背景色 */
+  width: 100%;
+  /* 确保容器宽度铺满整个屏幕 */
+  /* height: 2000rpx;  */
+  /* 确保容器高度铺满整个屏幕 */
+  /* 其他样式 */
+
+}
+
+.swiper-wrap {
+  overflow: hidden;
+  border-radius: 36rpx;
+  width: calc(750rpx - 40rpx);
+  height: calc((750rpx - 40rpx) * 8 / 15);
+  margin: 20rpx;
+  transform: translateY(0)
+}
+
+swiper-item {
+  border-radius: 36rpx;
+}
+
+swiper-item image {
+  width: 100%;
+}
+
+.shop-container {
+  display: flex;
+  flex-direction: row;
+  width: 750rpx;
+  height: 1000rpx;
+  background-color: #ececec;
+  z-index: -99;
+}
+
+.shop-left-view {
+  display: flex;
+  height: 1000rpx;
+  background: #fff !important;
+  border-radius: 20rpx;
+}
+
+.left-view-item {
+  margin-top: 10rpx;
+  line-height: 99rpx;
+  text-align: center;
+  font-size: 26rpx;
+}
+
+.active {
+  background-color: #ffffff;
+  position: relative;
+  color: #f3514f;
+}
+
+.shop-right-view {
+  display: flex;
+  width: 100%;
+  height: 100vh;
+  flex-wrap: wrap;
+  background-color: #ececec;
+  margin-left: 10rpx;
+  margin-right: 10rpx;
+  border-radius: 20rpx;
+}
+
+.right-view-item {
+  width: 100%;
+  margin-bottom: 24rpx ;
+  background-color: #fff;
+  border-radius: 20rpx;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.shopping-image {
+  display: flex;
+  height: auto;
+  width: 192rpx;
+  border-radius: 20rpx;
+  margin: 8rpx;
+}
+
+.shoppint-item-right{
+  display: flex;
+  flex-direction: column;
+  margin-left: 8rpx;
+}
+
+
+.shopping-text {
+  font-size: 32rpx;
+  font-weight: bold;
+  margin: 24rpx 0 16rpx 16rpx;
+  color: rgb(0, 0, 0);
+}
+
+.price-text {
+  font-size: 40rpx;
+  font-weight: bold;
+  margin: 0 0 16rpx 16rpx;
+  color: #f3514f;
+}
+
+.button-container {
+  display: flex;
+  flex-direction: row;
+}
+
+.add-to-cart-button,
+.buy-now-button {
+  display: flex;
+  justify-content: center;
+  width: 172rpx;
+  height: 72rpx;
+  margin: 0 16rpx 16rpx 0;
+  border-radius: 20px;
+  font-size: 24rpx;
+  font-weight: bold;
+  align-items: center;
+  line-height: 24rpx;
+  white-space: nowrap;
+}
+
+.add-to-cart-button {
+  background: linear-gradient(to left, rgb(255,100,8), rgb(248, 200, 96));
+  color: #fff;
+}
+
+.buy-now-button {
+  background:linear-gradient(to right, rgb(255,100,8), rgb(255, 0, 0));
+  color: white;
+}
+
+.floating-button {
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+  width: 60px;
+  height: 60px; 
+  border-radius: 50%; 
+  background-color: rgb(248, 200, 96); 
+  display: flex; 
+  justify-content: center;
+  align-items: center; 
+  color: #fff;
+  font-size: 24px;
+  border-radius: 50%;
+  box-shadow: rgb(92, 92, 92);
+}

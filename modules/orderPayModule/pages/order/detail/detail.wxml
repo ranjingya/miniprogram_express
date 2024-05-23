@@ -1,0 +1,123 @@
+<!--pages/order/index.wxml-->
+<view class="container order">
+  <!-- 收货地址区域 -->
+  <view class="address-card">
+    <!-- 添加收货地址 -->
+    <view wx:if="{{ !orderAddress.id }}" class="add-address" bindtap="toAddress">
+      <van-icon size="22px" name="add" />
+      <view>添加收货地址</view>
+    </view>
+
+    <!-- 渲染收货地址 -->
+    <view wx:else class="order-address detail-flex">
+      <view class="address-content">
+        <view class="title">{{ orderAddress.fullAddress }}</view>
+        <view class="info detail-flex">
+          <text>{{ orderAddress.name }}</text>
+          <text>{{ orderAddress.phone }}</text>
+        </view>
+      </view>
+
+      <view class="select-address">
+        <!-- 添加 flag 标识，是为了区分是否是从结算支付页面进入的收货地址列表页面 -->
+        <!-- 如果是，在点击收货地址时，就需要给全局共享的 address 进行赋值 -->
+        <navigator
+          class="navigator"
+          url="/modules/settingModule/pages/address/list/index?flag=1"
+        >
+          <van-icon color="#bbb" name="arrow" size="22px" />
+        </navigator>
+      </view>
+    </view>
+  </view>
+
+  <!-- 订单信息区域 -->
+  <view class="order-info">
+    <van-cell-group class="group">
+      <!-- 订购人姓名 -->
+      <van-field
+        label-class="filed-label"
+        model:value="{{ buyName }}"
+        label="订购人姓名："
+        placeholder="订购人的姓名"
+        placeholder-style="color: #969799"
+      />
+
+      <!-- 订购人手机号 -->
+      <van-field
+        label-class="filed-label"
+        input-class="input-class"
+        model:value="{{ buyPhone }}"
+        label="订购人手机号："
+        type="number"
+        maxlength="11"
+        placeholder="订购人的手机号"
+        placeholder-style="color: #969799"
+      />
+
+      <!-- 期望送达日期 -->
+      <van-cell
+        label-class="filed-label"
+        title="期望送达日期："
+        is-link
+        value="{{ deliveryDate ? deliveryDate : '选择送达日期' }}"
+        bind:click="onShowDateTimerPopUp"
+      />
+
+      <!-- 订单备注 -->
+      <van-cell title="订单备注：" border="{{ false }}" use-label-slot>
+        <textarea
+          slot="label"
+          model:value="{{ blessing }}"
+          class="form-textarea"
+          placeholder="写上您的祝福语，给心爱的他（她）送上你的祝福（请勿填写特殊符号或表情符号）"
+          name="textarea"
+        />
+      </van-cell>
+    </van-cell-group>
+  </view>
+
+  <!-- 订单商品信息 -->
+  <view class="goods-wraper">
+    <!-- 商品清单 -->
+    <view class="goods-list">
+      <view
+        class="goods-item detail-flex"
+        wx:for="{{ orderInfo.cartVoList }}"
+        wx:key="goodsId"
+      >
+        <view class="img">
+          <image src="{{ item.imageUrl }}" />
+        </view>
+        <view class="content">
+          <view class="goods-title">{{ item.name }}</view>
+          <view class="goods-price">
+            <view class="price"> ¥ {{ item.price }} </view>
+            <view>x{{ item.count }}</view>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+
+  <!-- 底部支付区域 -->
+  <view class="footer detail-flex">
+    <view class="left"> ¥{{ orderInfo.totalAmount }} </view>
+    <view class="right" bindtap="submitOrder">提交订单</view>
+  </view>
+
+  <van-popup
+    show="{{ show }}"
+    round
+    position="bottom"
+    custom-style="height: 50%"
+    bind:close="onCancelTimePicker"
+  >
+    <van-datetime-picker
+      type="date"
+      min-date="{{ minDate }}"
+      bind:confirm="onConfirmTimerPicker"
+      bind:cancel="onCancelTimePicker"
+    />
+  </van-popup>
+</view>

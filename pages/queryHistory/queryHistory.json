@@ -1,0 +1,7 @@
+{
+  "usingComponents": {
+    "ExpressInformation": "/components/ExpressInformation/ExpressInformation"
+  },
+  "navigationStyle": "custom",
+  "enablePullDownRefresh": true
+}

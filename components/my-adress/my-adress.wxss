@@ -1,0 +1,53 @@
+/* components/my-adress/my-adress.wxss */
+/* 底部边框线的样式 */
+.address-border {
+  display: block;
+  width: 100%;
+  height: 5px;
+}
+
+/* // 选择收货地址的盒子  */
+.address-choose-box {
+  height: 90px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* //渲染收货信息的盒子 */
+.address-info-box {
+  font-size: 12px;
+  height: 90px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 0 5px;
+}
+
+.row1-right {
+  display: flex;
+  align-items: center;
+}
+
+/* // 第一行 */
+.row1 {
+  display: flex;
+  justify-content: space-between;
+}
+
+
+.phone {
+  margin-right: 5px;
+}
+
+
+/* // 第二行 */
+.row2 {
+  display: flex;
+  align-items: center;
+  margin-top: 10px;
+}
+
+.row2-left {
+  white-space: nowrap;
+}

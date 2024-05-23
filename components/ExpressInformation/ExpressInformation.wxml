@@ -1,0 +1,33 @@
+<!--components/ExpressInfomation.wxml-->
+<custom-component>
+  <view class="express-information">
+    
+      <view class="query-result">
+        <view class="express-card">
+          <view class="express-card-head">
+            {{ expName }}：{{ number }}
+            <image src="/icons/index/copy.png" bindtap="copyExpressNumber"></image>
+          </view>
+          <navigator url="/pages/queryHisroryInfo/expressHistoryInfo?expressNo={{number}}">
+          <view class="express-card-body">
+            <view class="express-card-body-left">
+              <image src="{{ logo }}" mode="widthFix"></image>
+            </view>
+            <view class="express-card-body-right">
+              <view style="font-size: 36rpx; font-weight: bold; color: #fe7a15">
+                {{deliveryStatus}}
+              </view>
+              <view style="font-size: 24rpx">
+                最近更新：{{updateTime}}
+              </view>
+              <view style="font-size: 24rpx">
+                已在途：{{takeTime}}
+              </view>
+            </view>
+          </view>
+        </navigator>
+        </view>
+      </view>
+  </view>
+
+</custom-component>

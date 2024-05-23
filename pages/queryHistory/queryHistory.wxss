@@ -1,0 +1,147 @@
+/* pages/queryHistory/queryHistory.wxss */
+.body{
+  margin:20rpx;
+  margin-top:0rpx;
+  width: 710rpx;
+}
+
+/* 这里是顶部的输入框 */
+.head{
+  display: flex;
+  flex-direction: row;
+  opacity: 1;
+  background: linear-gradient(118.2deg, #F8D90F 0%, #D3DD18 100%);
+  height: 140rpx;
+  align-items: center; /* 垂直居中 */
+  /* border-end-start-radius: 50rpx; */
+  /* border-end-end-radius: 50rpx; */
+  border-bottom-left-radius: 50rpx;
+  border-bottom-right-radius: 50rpx;
+}
+.head-icon{
+  height:100rpx;
+  margin: 20rpx;
+  align-items:center;
+}
+
+.head-text{
+  display:flex; 
+  flex-direction:row; 
+  height: 80rpx; 
+  padding: 20rpx; 
+  margin: 20rpx;
+  width: 510rpx;
+  text-align: center;
+}
+
+.text-name{
+  margin:20rpx;
+  border-radius: 50rpx;
+  height: auto;
+}
+
+.text-number{
+  margin:20rpx;
+  border-radius: 50rpx;
+  height: auto;
+}
+
+.advertising{
+  overflow: hidden;
+  border-radius: 36rpx;
+  width: calc(750rpx - 40rpx);
+  height: calc((750rpx - 40rpx) * 9 / 16);
+  margin-top: 20rpx;
+  margin-bottom: -20rpx;
+  transform: translateY(0);
+}
+
+/* 这里是搜索框 */
+.search-frame{
+  display: flex;
+  flex-direction: row;
+  opacity: 1;
+  left: 16px;
+  top: 93px;
+  width: 343px;
+  height: 34px;
+  opacity: 1;
+  border-radius: 214px;
+  background-color: #cccccc;
+  
+}
+
+
+.search-picker{
+  display: flex;
+  justify-content: center;
+  height: 70rpx;
+  display: flex;
+  font-size: small;
+  align-self: center;
+  background-color: #F8D90F;
+  border-radius: 30rpx;
+  width: 200rpx;
+  text-align: center;
+  align-items: center;
+}
+
+.picker{
+  position: relative; 
+  left: 0rpx; 
+  top: 10rpx;
+  width: 200rpx;
+  margin: 5rpx;
+  font-size: small;
+}
+.search-editor{
+  flex-grow:1;
+  align-self: center;
+  margin:10rpx;
+  justify-content: space-between;
+  font-size: small;
+}
+
+.search-icon{
+  margin: 15rpx;
+  width: 20px;
+  height: 20px;
+}
+
+/* 数据展示块 */
+
+.list-wrap {
+  margin: 20rpx 0rpx;
+  box-shadow: 0 5px 20px 0 rgba(0, 0, 0, 0.2);
+  border-radius: 36rpx;
+  margin-bottom: 128rpx;
+  padding-top: 20rpx;
+  padding-left: 10rpx;
+  align-self: center;
+}
+
+/* 数据展示组件 */
+.list-box {
+  display: flex;
+  flex-direction: column;
+  margin-top: -12rpx;
+}
+/* 没有数据 */
+.no-data {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  padding: 20rpx 0;
+  min-height: 320rpx;
+}
+
+.no-data image {
+  margin: 20rpx auto;
+  width: 320rpx;
+}
+
+.no-data text {
+  margin-top: 24rpx;
+  font-size: 48rpx;
+  color: #909399;
+}

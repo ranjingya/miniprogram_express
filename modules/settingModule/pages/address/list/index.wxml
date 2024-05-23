@@ -1,0 +1,51 @@
+<!--pages/address/list/index.wxml-->
+
+<view class="container address-list" bindtap="onSwipeCellPage">
+  <view class="list-warpper" wx:if="{{ addressList.length }}">
+    <view wx:for="{{ addressList }}" wx:key="id" class="list-item">
+      <van-swipe-cell
+        id="swipe-cell-{{ item.id }}"
+        bind:open="swipeCellOpen"
+        bind:click="onSwipeCellClick"
+        right-width="{{ 65 }}"
+      >
+        <van-cell-group border="{{ false }}">
+          <view class="list-item-box">
+            <view class="info" bindtap="changeAddress" data-id="{{ item.id }}">
+              <view class="user-info">
+                <text>{{ item.name }}</text>
+                <text>{{ item.phone }}</text>
+                <text wx:if="{{ item.is_default === 1 }}" class="default-tag">默认</text>
+              </view>
+
+              <view class="address-info"> {{ item.full_address }} </view>
+            </view>
+
+            <view class="editBtn" bindtap="toEdit" data-id="{{ item.id }}">
+              <van-icon name="edit" size="22px" color="#999" />
+            </view>
+          </view>
+        </van-cell-group>
+
+        <view
+          slot="right"
+          class="van-swipe-cell__right"
+          bindtap="delAddress"
+          data-id="{{ item.id }}"
+        >
+          <text>删除</text>
+        </view>
+      </van-swipe-cell>
+    </view>
+  </view>
+
+  <van-empty wx:else description="还没有收货地址，快去添加吧～" />
+
+  <view class="footer">
+    <view class="btn">
+      <navigator url="/modules/settingModule/pages/address/add/index">
+        新增地址
+      </navigator>
+    </view>
+  </view>
+</view>

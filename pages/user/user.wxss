@@ -1,0 +1,278 @@
+.page-container {
+  background-color: #ececec; /* 灰色背景色 */
+  width: 100%; /* 确保容器宽度铺满整个屏幕 */
+  height: 2800rpx; /* 确保容器高度铺满整个屏幕 */
+  /* 其他样式 */
+
+}
+.userinfo {
+  display: flex;
+  flex-direction:column;
+  align-items: center;
+  margin-top: 120rpx;
+  margin-left: 25rpx;
+  height:auto;
+  width:700rpx;
+}
+.avatar-wrapper {
+  /* margin-top: 30rpx; */
+  /* 使用小程序的 rpx 单位 */
+  /* margin-left: 50rpx;  */
+  /* 使用小程序的 rpx 单位 */
+  width:auto; /* 示例宽度 */
+  height: auto; /* 示例高度 */
+  background-color: rgb(255, 255, 255);
+  color: rgb(255, 255, 255); 
+  padding: 10rpx; 
+}
+.avatar {
+  width: 150rpx;
+  height: 150rpx;
+  border-radius: 100%;
+  margin-bottom: -50rpx;
+  /* z-index: 99; */
+}
+.userinfo-avatar{
+  margin-top: 90rpx;
+  margin-left: 330rpx;
+  transform: translate(-50%, -50%);
+  width: 150rpx;
+  height: 150rpx;
+  border-radius: 100%;
+  z-index: 99;
+}
+
+.userinfo-nickname{
+  display: flex;
+  margin-top: -100rpx;
+  margin-left:240rpx;
+  width: 500rpx;
+  padding: 16px;
+  box-sizing: border-box;
+  border-top: .5px solid rgba(0, 0, 0, 0.1);
+  border-bottom: .5px solid rgba(0, 0, 0, 0.1);
+  color: black;
+
+
+
+  
+}
+.nickname-wrapper {
+  display: flex;
+  width: 100%;
+  padding: 16px;
+  text-align: center;
+  box-sizing: border-box;
+  border-top: .5px solid rgba(0, 0, 0, 0.1);
+  border-bottom: .5px solid rgba(0, 0, 0, 0.1);
+  color: black;
+}
+.bck-box {
+  background-color: #ffffff;
+  
+  /* 灰色背景 */
+  width: 700rpx;
+  height: 250rpx;
+  margin-top: 120rpx;
+  margin-left: 25rpx;
+  padding-top: -20rpx;
+  border-radius: 20rpx;
+  z-index: -99;
+}
+
+.bck {
+  display: flex;
+  position: relative;
+  margin-left: 0rpx;
+  /* margin-top: -20rpx; */
+  height:50rpx;
+}
+.bck-text {
+  background-image: "/icons/user/advertisement.jpg";
+  position: relative;
+  margin-left: 20rpx; /* 调整水平位置 */
+  margin-top: 45rpx; /* 调整垂直位置 */
+  font-size: 24rpx;
+  transform: translateY(-50%); 
+  color: rgb(0, 0, 0);
+  z-index: 1;
+}
+.bck-image {
+  margin-left: 30rpx; 
+  margin-top:50rpx;
+  transform: translateY(-50%); 
+  width: 50rpx; /* 设置图片的宽度 */
+  height: auto; /* 根据宽度等比缩放高度 */
+}
+.advertise{
+  margin-top: 20rpx;
+  margin-left: 25rpx;
+  margin-right: 25rpx;
+  width: 700rpx; 
+  height: 200rpx;
+  border-radius: 20rpx;
+
+}
+.body01{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  margin-top: 25rpx;
+  margin-left: 25rpx;
+  margin-right: 25rpx;
+  width: 84rpx; 
+  height: 72rpx;
+}
+.body-box01 {
+  flex-wrap: wrap;
+  background-color: #ffffff;
+  /* 灰色背景 */
+  display: flex;
+  width: 700rpx;
+  height: 220rpx;
+  margin-top: 20rpx;
+  margin-left: 25rpx;
+  border-radius: 20rpx;
+  z-index: -99;
+}
+.body01-image {
+  position: absolute;
+  height: 50rpx; 
+  width:50rpx;
+  transform: translateY(-50%); 
+   /* 根据宽度等比缩放高度 */
+}
+.body01-text {
+  position: absolute; 
+  margin-top: 60rpx;
+  font-size: 24rpx;
+  color: rgb(0, 0, 0);
+  z-index: 1;
+}
+.body-box02 {
+  flex-wrap: wrap;
+  background-color: #ffffff;
+  display: flex;
+  width: 700rpx;
+  height: 150rpx;
+  margin-top: 20rpx;
+  margin-left: 25rpx;
+  border-radius: 20rpx;
+  z-index: -99;
+}
+.body02 {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  flex: 1;
+  margin-top: 15rpx;
+  margin-left: 20rpx;
+  margin-right: 20rpx;
+  width: 100rpx; 
+  height:100rpx ;
+}
+.body02-image {
+  position: absolute;
+  margin-top: 80rpx;
+  margin-left: 20rpx;
+  margin-right: 20rpx;
+  height: 90rpx; 
+  width:90rpx;
+  transform: translateY(-50%);
+}
+
+.body02-text {
+  position: absolute; 
+  margin-top: 120rpx;
+  font-size: 24rpx;
+  color: rgb(0, 0, 0);
+  z-index: 1;
+}
+.body-box03 {
+  flex-wrap: wrap;
+  background-color: #ffffff;
+  /* 灰色背景 */
+  display: flex;
+  width: 700rpx;
+  height: 360rpx;
+  margin-top: 20rpx;
+  margin-left: 25rpx;
+  border-radius: 20rpx;
+  z-index: -99;
+}
+.body03 {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  margin-top: 25rpx;
+  margin-left: 25rpx;
+  margin-right: 25rpx;
+  width: 84rpx; 
+  height: 72rpx;
+}
+
+.body03-image {
+  position: absolute;
+  height: 50rpx; 
+  width:50rpx;
+  transform: translateY(-50%); 
+}
+
+.body03-text {
+  position: absolute; 
+  margin-top: 60rpx;
+  font-size: 24rpx;
+  color: rgb(0, 0, 0);
+  z-index: 1;
+}
+.shopping-box{
+  flex-wrap: wrap;
+  background-color: #ffffff;
+  /* 灰色背景 */
+  display: flex;
+  width: 700rpx;
+  height: 1300rpx;
+  margin-top: 20rpx;
+  margin-left: 25rpx;
+  border-radius: 20rpx;
+  z-index: -99;
+}
+.change{
+  position: absolute; 
+  margin-top: 10rpx;
+  margin-left: 35rpx;
+  font-size: 36rpx;
+  color: rgb(0, 0, 0);
+  z-index: 1;
+}
+.shopping-wrap {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  margin-top: 80rpx;
+  margin-left: 25rpx;
+  margin-right: 25rpx;
+  width: 280rpx; 
+  height: 280rpx;
+}
+
+.shopping-image{
+  position: absolute;
+  margin-top: 280rpx;
+  height:280rpx; 
+  width:280rpx;
+  transform: translateY(-50%); 
+}
+.shopping-text {
+  position: absolute; 
+  margin-top: 350rpx;
+  margin-left: -50rpx;
+  font-size: 36rpx;
+  color: rgb(0, 0, 0);
+  z-index: 1;
+}
+

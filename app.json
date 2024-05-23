@@ -1,0 +1,117 @@
+{
+  "entryPagePath": "pages/index/index",
+  "pages": [
+    "pages/index/index",
+    "pages/logs/logs",
+    "pages/queryHistory/queryHistory",
+    "pages/user/user",
+    "pages/cart/cart",
+    "pages/login/login",
+    "pages/express/express",
+    "pages/send/send",
+    "pages/queryHisroryInfo/expressHistoryInfo",
+    "pages/classify/classify"
+  ],
+  "resolveAlias": {
+    "@/*": "/*"
+  },
+  "requiredPrivateInfos": [
+    "getLocation"
+  ],
+  "window": {
+    "navigationBarTextStyle": "black",
+    "navigationBarTitleText": "长风快递",
+    "navigationBarBackgroundColor": "#ffffff"
+  },
+  "usingComponents": {
+    "van-dialog": "@vant/weapp/dialog/index",
+    "van-icon": "@vant/weapp/icon/index",
+    "van-empty": "@vant/weapp/empty/index",
+    "van-swipe-cell": "@vant/weapp/swipe-cell/index",
+    "van-checkbox": "@vant/weapp/checkbox/index",
+    "van-stepper": "@vant/weapp/stepper/index",
+    "van-submit-bar": "@vant/weapp/submit-bar/index",
+    "van-action-sheet": "@vant/weapp/action-sheet/index",
+    "van-button": "@vant/weapp/button/index",
+    "van-popup": "@vant/weapp/popup/index",
+    "van-field": "@vant/weapp/field/index",
+    "van-cell-group": "@vant/weapp/cell-group/index",
+    "van-cell": "@vant/weapp/cell/index",
+    "van-datetime-picker": "@vant/weapp/datetime-picker/index",
+    "van-goods-action": "@vant/weapp/goods-action/index",
+    "van-goods-action-icon": "@vant/weapp/goods-action-icon/index",
+    "van-goods-action-button": "@vant/weapp/goods-action-button/index",
+    "van-steps": "@vant/weapp/steps/index"
+  },
+  "subPackages": [{
+      "root": "modules/settingModule",
+      "name": "settingModule",
+      "pages": [
+        "pages/settings/settings",
+        "pages/address/add/index",
+        "pages/address/list/index",
+        "pages/profile/profile"
+      ]
+    },
+    {
+      "root": "modules/goodModule",
+      "name": "goodModule",
+      "pages": [
+        "pages/goods/list/list",
+        "pages/goods/detail/detail"
+      ]
+    },
+    {
+      "root": "modules/orderPayModule",
+      "name": "orderPayModule",
+      "pages": [
+        "pages/order/detail/detail",
+        "pages/order/list/list"
+      ]
+    }
+  ],
+  "preloadRule": {
+    "modules/orderPayModule/pages/order/detail/detail": {
+      "network": "all",
+      "packages": [
+        "settingModule"
+      ]
+    },
+    "pages/cart/cart": {
+      "network": "all",
+      "packages": [
+        "orderPayModule"
+      ]
+    }
+  },
+  "componentFramework": "glass-easel",
+  "sitemapLocation": "sitemap.json",
+  "lazyCodeLoading": "requiredComponents",
+  "tabBar": {
+    "custom": true,
+    "backgroundColor": "#ffffff",
+    "borderStyle": "black",
+    "selectedColor": "#FE7A15",
+    "position": "bottom",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "首页",
+        "iconPath": "icons/tab_icons/index.png",
+        "selectedIconPath": "icons/tab_icons/index_selected.png"
+      },
+      {
+        "pagePath": "pages/queryHistory/queryHistory",
+        "text": "查询历史",
+        "iconPath": "icons/tab_icons/history.png",
+        "selectedIconPath": "icons/tab_icons/history_selected.png"
+      },
+      {
+        "pagePath": "pages/user/user",
+        "text": "用户中心",
+        "iconPath": "icons/tab_icons/user.png",
+        "selectedIconPath": "icons/tab_icons/user_selected.png"
+      }
+    ]
+  }
+}

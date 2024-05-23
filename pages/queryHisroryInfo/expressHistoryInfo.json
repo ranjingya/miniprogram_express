@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "query-express-info": "/components/query-express-info/query-express-info"
+  }
+}
+  

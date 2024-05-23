@@ -1,0 +1,77 @@
+<view class="page-container">
+  <scroll-view class="main">
+    <view class="bck-head">
+      <view class="bck-box">
+        <view class="userinfo">
+          <block wx:if="{{canIUseNicknameComp && !hasUserInfo}}">
+            <button class="avatar-wrapper" mode="widthFix" open-type="chooseAvatar" bind:chooseavatar="onChooseAvatar">
+              <image class="avatar" src="{{userInfo.avatarUrl}}"></image>
+            </button>
+            <view class="nickname-wrapper">
+              <text class="nickname-label">用户名 </text>
+              <input type="nickname" class="nickname-input" placeholder="请输入用户名" bind:change="onInputChange" />
+            </view>
+          </block>
+          <block wx:elif="{{!hasUserInfo}}">
+            <button wx:if="{{canIUseGetUserProfile}}" bindtap="getUserProfile"> 获取头像昵称 </button>
+            <view wx:else> 请使用2.10.4及以上版本基础库 </view>
+          </block>
+          <block wx:else>
+            <image bindtap="bindViewTap" class="userinfo-avatar" src="{{userInfo.avatarUrl}}" mode="cover"></image>
+            <text class="userinfo-nickname">{{userInfo.nickName}}</text>
+          </block>
+        </view>
+        <block wx:for="{{bckList}}" wx:for-item="item" wx:key="text">
+          <view class="bck" bind:tap="bckClick" data-item="{{item}}">
+            <image class="bck-image" src="{{item.src}}" mode="widthFix"></image>
+            <text class="bck-text">{{item.text}}</text>
+          </view>
+        </block>
+      </view>
+    </view>
+    <view calss="advertisement">
+      <image class="advertise" src="/icons/user/advertisement.jpg"></image>
+    </view>
+    <view class="body-List01">
+      <view class="body-box01">
+        <block wx:for="{{bodyList01}}" wx:for-item="item" wx:key="text">
+          <view class="body01" bind:tap="bodyClick" data-item="{{item}}">
+            <image class="body01-image" src="{{item.src}}" style="flex:1" mode="widthFix"></image>
+            <text class="body01-text">{{item.text}}</text>
+          </view>
+        </block>
+      </view>
+    </view>
+    <view class="body-List02">
+      <view class="body-box02">
+        <block wx:for="{{bodyList02}}" wx:for-item="item" wx:key="text">
+          <view class="body02" bind:tap="bodyClick" data-item="{{item}}">
+            <image class="body02-image" src="{{item.src}}" mode="widthFix"></image>
+            <text class="body02-text">{{item.text}}</text>
+          </view>
+        </block>
+      </view>
+    </view>
+    <view class="body-List03">
+      <view class="body-box03">
+        <block wx:for="{{bodyList03}}" wx:for-item="item" wx:key="text">
+          <view class="body03" bind:tap="bodyClick" data-item="{{item}}">
+            <image class="body03-image" src="{{item.src}}" mode="widthFix"></image>
+            <text class="body03-text">{{item.text}}</text>
+          </view>
+        </block>
+      </view>
+    </view>
+    <view class="shopping-all">
+      <text class="change">兑换专区</text>
+      <view class="shopping-box">
+        <block wx:for="{{shoppingList}}" wx:for-item="item" wx:key="text">
+          <view class="shopping-wrap" bind:tap="bodyClick" data-item="{{item}}">
+            <image class="shopping-image" src="{{item.src}}" mode="widthFix"></image>
+            <text class="shopping-text">{{item.text}}</text>
+          </view>
+        </block>
+      </view>
+    </view>
+  </scroll-view>
+</view>
