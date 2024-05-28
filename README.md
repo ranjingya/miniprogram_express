@@ -1,6 +1,6 @@
 # 校园快递超市微信小程序  
 ## 后端接口实现：  
-[校园快递超市微信小程序后端实现](https://www.example.com/my%20great%20page)  
+[校园快递超市微信小程序后端实现](https://github.com/ranjingya/miniprogram_express_backend)  
 
 ## 项目概述  
 
